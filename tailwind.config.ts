@@ -13,6 +13,10 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        display: ["Orbitron", "sans-serif"],
+        body: ["Rajdhani", "sans-serif"],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -47,6 +51,12 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        "neon-cyan": "hsl(var(--neon-cyan))",
+        "neon-magenta": "hsl(var(--neon-magenta))",
+        "neon-purple": "hsl(var(--neon-purple))",
+        "neon-green": "hsl(var(--neon-green))",
+        "neon-orange": "hsl(var(--neon-orange))",
+        "neon-yellow": "hsl(var(--neon-yellow))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
@@ -65,25 +75,31 @@ export default {
       },
       keyframes: {
         "accordion-down": {
-          from: {
-            height: "0",
-          },
-          to: {
-            height: "var(--radix-accordion-content-height)",
-          },
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
         },
         "accordion-up": {
-          from: {
-            height: "var(--radix-accordion-content-height)",
-          },
-          to: {
-            height: "0",
-          },
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
+        },
+        "glow-pulse": {
+          "0%, 100%": { boxShadow: "0 0 20px hsl(var(--primary) / 0.5)" },
+          "50%": { boxShadow: "0 0 40px hsl(var(--primary) / 0.8)" },
+        },
+        shimmer: {
+          "0%": { backgroundPosition: "-200% 0" },
+          "100%": { backgroundPosition: "200% 0" },
         },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "glow-pulse": "glow-pulse 2s ease-in-out infinite",
+        shimmer: "shimmer 2s linear infinite",
+      },
+      backgroundImage: {
+        "cyber-gradient": "linear-gradient(135deg, hsl(var(--neon-cyan)) 0%, hsl(var(--neon-magenta)) 100%)",
+        "dark-gradient": "linear-gradient(180deg, hsl(222 47% 8%) 0%, hsl(222 47% 3%) 100%)",
       },
     },
   },
